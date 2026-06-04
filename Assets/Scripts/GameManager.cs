@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq; 
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class GameManager : MonoBehaviour
     public Text descriptionText;
     public Image eventImage;
     public CardItem[] cards;
+    [Header("Scripts")]
+    public GameState gameState = new GameState();
 
     private void Start()
     {
@@ -30,14 +33,31 @@ public class GameManager : MonoBehaviour
 
     private void SpawnCards()
     {
-        for(int i = 0; i < cards.Length; i++)
+        for (int i = 0; i < cards.Length; i++)
         {
+            if (i < currentEvent.choices.Count)
+                cards[i].gameObject.SetActive(true);
+            else
+            {
+                cards[i].gameObject.SetActive(false);
+                continue;
+            }
+
             cards[i].Setup(currentEvent.choices[i], this);
         }
     }
 
     public void SelectChoice(EventChoice choice)
     {
+        if (!choice.requiredFlags.All(rf =>
+            gameState.activeFlags.Contains(rf.flagId)))
+            return;
+
+        foreach (var flag in choice.flagsToSet)
+        {
+            gameState.activeFlags.Add(flag.flagId);
+        }
+
         ShowEvent(choice.nextEvent);
     }
 }

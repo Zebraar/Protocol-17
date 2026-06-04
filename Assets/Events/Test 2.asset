@@ -18,13 +18,18 @@ MonoBehaviour:
   choices:
   - card: {fileID: 11400000, guid: 989854db7b0c649439b93dd2435a522f, type: 2}
     nextEvent: {fileID: 11400000, guid: 9faba3a7c0c164941811ab7e1c0674f9, type: 2}
-    flagToSet: 
+    flagsToSet: []
+    requiredFlags: []
   - card: {fileID: 11400000, guid: b52f2365b6e97e74b932947f7211a6e2, type: 2}
     nextEvent: {fileID: 11400000, guid: 9faba3a7c0c164941811ab7e1c0674f9, type: 2}
-    flagToSet: 
+    flagsToSet: []
+    requiredFlags: []
   - card: {fileID: 11400000, guid: 0474fcc35b0d41e438b893636fed2290, type: 2}
     nextEvent: {fileID: 11400000, guid: 9faba3a7c0c164941811ab7e1c0674f9, type: 2}
-    flagToSet: 
+    flagsToSet: []
+    requiredFlags: []
   - card: {fileID: 11400000, guid: 29d1ec574ff6e86408185197e35979f8, type: 2}
     nextEvent: {fileID: 11400000, guid: 9faba3a7c0c164941811ab7e1c0674f9, type: 2}
-    flagToSet: 
+    flagsToSet: []
+    requiredFlags:
+    - {fileID: 11400000, guid: 9b3b8a12e24f66b4b9a6cbb2071f3f17, type: 2}
