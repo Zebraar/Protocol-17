@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -93,12 +92,5 @@ public class GameManager : MonoBehaviour
     private void UpdateEnergyUI()
     {
         energyText.text = "Ваша энергия: " + energyHandler.GetEnergy().ToString();
-    }
-    public void BackToMainMenu()
-    {
-        saveManager.Save();
-        PlayerPrefs.SetFloat("Music", audioSource.time);
-        PlayerPrefs.Save();
-        SceneManager.LoadScene("MainMenu");
     }
 }
