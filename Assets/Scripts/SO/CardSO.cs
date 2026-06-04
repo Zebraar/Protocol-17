@@ -5,4 +5,5 @@ public class CardSO : ScriptableObject
 {
     public string cardName;
     public int energyCost;
+    public int energyAdd;
 }

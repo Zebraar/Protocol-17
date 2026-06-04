@@ -119,6 +119,50 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &7092584
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7092586}
+  - component: {fileID: 7092585}
+  m_Layer: 0
+  m_Name: EnergyHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &7092585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7092584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa83042bfff76ed4c905e55a66610555, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnergyHandler
+--- !u!4 &7092586
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7092584}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &49836693
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,6 +257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CardItem
   cardNameText: {fileID: 259323613}
   button: {fileID: 1138395360}
+  cardCostText: {fileID: 621478814}
 --- !u!1 &86213304
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,6 +562,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CardItem
   cardNameText: {fileID: 972369489}
   button: {fileID: 1091933945}
+  cardCostText: {fileID: 611472197}
 --- !u!1 &259323611
 GameObject:
   m_ObjectHideFlags: 0
@@ -862,12 +908,14 @@ MonoBehaviour:
   currentEvent: {fileID: 11400000, guid: 9faba3a7c0c164941811ab7e1c0674f9, type: 2}
   titleText: {fileID: 411307463}
   descriptionText: {fileID: 1628795391}
+  energyText: {fileID: 1365218710}
   eventImage: {fileID: 1432363715}
   cards:
   - {fileID: 49836697}
   - {fileID: 362551317}
   - {fileID: 1879091946}
   - {fileID: 254511741}
+  energyHandler: {fileID: 7092585}
 --- !u!4 &359388522
 Transform:
   m_ObjectHideFlags: 0
@@ -977,6 +1025,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CardItem
   cardNameText: {fileID: 747457499}
   button: {fileID: 86213306}
+  cardCostText: {fileID: 1394431673}
 --- !u!1 &411307461
 GameObject:
   m_ObjectHideFlags: 0
@@ -2811,6 +2860,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CardItem
   cardNameText: {fileID: 287493423}
   button: {fileID: 1536013106}
+  cardCostText: {fileID: 1320550107}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -2820,3 +2870,4 @@ SceneRoots:
   - {fileID: 1444872673}
   - {fileID: 348094966}
   - {fileID: 359388522}
+  - {fileID: 7092586}

@@ -10,14 +10,17 @@ public class GameManager : MonoBehaviour
     [Header("UI")]
     public Text titleText;
     public Text descriptionText;
+    public Text energyText;
     public Image eventImage;
     public CardItem[] cards;
     [Header("Scripts")]
     public GameState gameState = new GameState();
+    public EnergyHandler energyHandler;
 
     private void Start()
     {
         ShowEvent(currentEvent);
+        UpdateEnergyUI();
     }
 
     public void ShowEvent(EventSO eventData)
@@ -33,7 +36,7 @@ public class GameManager : MonoBehaviour
 
     private void SpawnCards()
     {
-        for (int i = 0; i < cards.Length; i++)
+        for(int i = 0; i < cards.Length; i++)
         {
             if (i < currentEvent.choices.Count)
                 cards[i].gameObject.SetActive(true);
@@ -49,15 +52,26 @@ public class GameManager : MonoBehaviour
 
     public void SelectChoice(EventChoice choice)
     {
-        if (!choice.requiredFlags.All(rf =>
+        if(!choice.requiredFlags.All(rf =>
             gameState.activeFlags.Contains(rf.flagId)))
             return;
+        if(energyHandler.GetEnergy() < choice.card.energyCost) return;
+        else 
+        {
+            energyHandler.RemoveEnergy(choice.card.energyCost); 
+        }
+        energyHandler.AddEnergy(choice.card.energyAdd);
+        UpdateEnergyUI();
 
-        foreach (var flag in choice.flagsToSet)
+        foreach(var flag in choice.flagsToSet)
         {
             gameState.activeFlags.Add(flag.flagId);
         }
 
         ShowEvent(choice.nextEvent);
+    }
+    private void UpdateEnergyUI()
+    {
+        energyText.text = "Ваша энергия: " + energyHandler.GetEnergy().ToString();
     }
 }

@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
   cardName: "\u041E\u0442\u0434\u043E\u0445\u043D\u0443\u0442\u044C"
   energyCost: 0
+  energyAdd: 1
