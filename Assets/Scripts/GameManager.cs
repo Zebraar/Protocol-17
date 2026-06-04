@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
-using System.Linq; 
+using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -17,11 +18,20 @@ public class GameManager : MonoBehaviour
     public GameState gameState = new GameState();
     public EnergyHandler energyHandler;
     public SaveManager saveManager;
+    [Header("Audio")]
+    public AudioSource audioSource;
 
     private int autoSaveDelay;
 
     private void Start()
     {
+        if(PlayerPrefs.GetInt("IsNewGame", 0) == 1)
+        {
+            saveManager.DeleteSaveData();
+            PlayerPrefs.SetInt("IsNewGame", 0);
+            PlayerPrefs.Save();
+        }
+        audioSource.time = PlayerPrefs.GetFloat("Music", 0.0f);
         saveManager.Load();
         ShowEvent(currentEvent);
         UpdateEnergyUI();
@@ -83,5 +93,12 @@ public class GameManager : MonoBehaviour
     private void UpdateEnergyUI()
     {
         energyText.text = "Ваша энергия: " + energyHandler.GetEnergy().ToString();
+    }
+    public void BackToMainMenu()
+    {
+        saveManager.Save();
+        PlayerPrefs.SetFloat("Music", audioSource.time);
+        PlayerPrefs.Save();
+        SceneManager.LoadScene("MainMenu");
     }
 }

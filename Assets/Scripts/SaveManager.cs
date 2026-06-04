@@ -40,4 +40,8 @@ public class SaveManager : MonoBehaviour
 
         Debug.Log("Game Loaded!");
     }
+    public void DeleteSaveData()
+    {
+        File.Delete(path);
+    }
 }
