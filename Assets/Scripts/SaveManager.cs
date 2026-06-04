@@ -5,6 +5,7 @@ using UnityEngine;
 public class SaveManager : MonoBehaviour
 {
     public GameState gameState = new GameState();
+    public GameManager gameManager;
 
     private string path;
 
@@ -17,6 +18,8 @@ public class SaveManager : MonoBehaviour
         SaveData data = new SaveData();
 
         data.flags = new List<string>(gameState.activeFlags);
+
+        data.currentEvent = gameManager.currentEvent;
 
         string json = JsonUtility.ToJson(data, true);
 
@@ -37,6 +40,7 @@ public class SaveManager : MonoBehaviour
         SaveData data = JsonUtility.FromJson<SaveData>(json);
 
         gameState.activeFlags = new HashSet<string>(data.flags);
+        gameManager.currentEvent = data.currentEvent;
 
         Debug.Log("Game Loaded!");
     }

@@ -31,7 +31,9 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.Save();
         }
         audioSource.time = PlayerPrefs.GetFloat("Music", 0.0f);
+        EventSO oldEvent = currentEvent;
         saveManager.Load();
+        if(currentEvent == null) currentEvent = oldEvent;
         ShowEvent(currentEvent);
         UpdateEnergyUI();
     }

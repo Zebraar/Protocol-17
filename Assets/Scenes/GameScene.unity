@@ -1693,6 +1693,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cca46f5ce62fc264782e4fc6f8ee6d15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SaveManager
+  gameManager: {fileID: 359388521}
 --- !u!4 &674061224
 Transform:
   m_ObjectHideFlags: 0
