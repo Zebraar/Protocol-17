@@ -16,15 +16,25 @@ public class GameManager : MonoBehaviour
     [Header("Scripts")]
     public GameState gameState = new GameState();
     public EnergyHandler energyHandler;
+    public SaveManager saveManager;
+
+    private int autoSaveDelay;
 
     private void Start()
     {
+        saveManager.Load();
         ShowEvent(currentEvent);
         UpdateEnergyUI();
     }
 
     public void ShowEvent(EventSO eventData)
     {
+        autoSaveDelay++;
+        if(autoSaveDelay >= 5)
+        {
+            autoSaveDelay = 0;
+            saveManager.Save();
+        }
         currentEvent = eventData;
 
         titleText.text = eventData.eventName;

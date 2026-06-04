@@ -633,7 +633,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Name
+  m_Text: "\u0418\u043C\u044F"
 --- !u!222 &259323614
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -712,7 +712,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Name
+  m_Text: "\u0418\u043C\u044F"
 --- !u!222 &287493424
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -916,6 +916,7 @@ MonoBehaviour:
   - {fileID: 1879091946}
   - {fileID: 254511741}
   energyHandler: {fileID: 7092585}
+  saveManager: {fileID: 0}
 --- !u!4 &359388522
 Transform:
   m_ObjectHideFlags: 0
@@ -1096,7 +1097,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u041A\u0443\u0445\u043D\u044F"
+  m_Text: "\u0417\u0430\u0433\u043E\u043B\u043E\u0432\u043E\u043A"
 --- !u!222 &411307464
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1387,7 +1388,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Energy: 5'
+  m_Text: "\u042D\u043D\u0435\u0440\u0433\u0438\u044F: 5"
 --- !u!222 &611472198
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1466,7 +1467,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Energy: 5'
+  m_Text: "\u042D\u043D\u0435\u0440\u0433\u0438\u044F: 5"
 --- !u!222 &621478815
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1475,6 +1476,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 621478812}
   m_CullTransparentMesh: 1
+--- !u!1 &674061222
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 674061224}
+  - component: {fileID: 674061223}
+  m_Layer: 0
+  m_Name: SaveManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &674061223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674061222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cca46f5ce62fc264782e4fc6f8ee6d15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SaveManager
+--- !u!4 &674061224
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674061222}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &747457497
 GameObject:
   m_ObjectHideFlags: 0
@@ -1545,7 +1590,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Name
+  m_Text: "\u0418\u043C\u044F"
 --- !u!222 &747457500
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1624,7 +1669,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Name
+  m_Text: "\u0418\u043C\u044F"
 --- !u!222 &972369490
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2048,7 +2093,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Energy: 5'
+  m_Text: "\u042D\u043D\u0435\u0440\u0433\u0438\u044F: 5"
 --- !u!222 &1320550108
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2206,7 +2251,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Energy: 5'
+  m_Text: "\u042D\u043D\u0435\u0440\u0433\u0438\u044F: 5"
 --- !u!222 &1394431674
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2649,8 +2694,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0412\u044B \u0441\u0435\u043B\u0438 \u0437\u0430\u0432\u0442\u0440\u0430\u043A\u0430\u0442\u044C
-    \u043F\u043E\u0441\u043B\u0435 \u0442\u044F\u0436\u0435\u043B\u043E\u0439 \u043D\u043E\u0447\u0438"
+  m_Text: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435"
 --- !u!222 &1628795392
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2871,3 +2915,4 @@ SceneRoots:
   - {fileID: 348094966}
   - {fileID: 359388522}
   - {fileID: 7092586}
+  - {fileID: 674061224}
