@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60f9fd6b27a663b49b6d5ee3acb66a67, type: 3}
+  m_Name: Test 2
+  m_EditorClassIdentifier: Assembly-CSharp::EventSO
+  eventName: Test 2
+  description: 'Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 '
+  image: {fileID: 21300000, guid: 32e80e96c1b340e4596017ab944d0505, type: 3}
+  choices:
+  - card: {fileID: 11400000, guid: 989854db7b0c649439b93dd2435a522f, type: 2}
+    nextEvent: {fileID: 11400000, guid: 9faba3a7c0c164941811ab7e1c0674f9, type: 2}
+    flagToSet: 
+  - card: {fileID: 11400000, guid: b52f2365b6e97e74b932947f7211a6e2, type: 2}
+    nextEvent: {fileID: 11400000, guid: 9faba3a7c0c164941811ab7e1c0674f9, type: 2}
+    flagToSet: 
+  - card: {fileID: 11400000, guid: 0474fcc35b0d41e438b893636fed2290, type: 2}
+    nextEvent: {fileID: 11400000, guid: 9faba3a7c0c164941811ab7e1c0674f9, type: 2}
+    flagToSet: 
+  - card: {fileID: 11400000, guid: 29d1ec574ff6e86408185197e35979f8, type: 2}
+    nextEvent: {fileID: 11400000, guid: 9faba3a7c0c164941811ab7e1c0674f9, type: 2}
+    flagToSet: 
