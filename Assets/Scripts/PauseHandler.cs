@@ -44,6 +44,7 @@ public class PauseHandler : MonoBehaviour
 
     public void BackToMainMenu()
     {
+        Pause();
         saveManager.Save();
         PlayerPrefs.SetFloat("Music", audioSource.time);
         PlayerPrefs.Save();
