@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
+using System.Collections.Generic;
 using DG.Tweening;
 
 public class BtnAnimationScr : MonoBehaviour
@@ -27,7 +29,7 @@ public class BtnAnimationScr : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Pointer.current != null && Pointer.current.press.isPressed)
         {
             bool currentHover = IsPointerOverThisInUI();
             if (currentHover && !isScaled)
@@ -50,10 +52,12 @@ public class BtnAnimationScr : MonoBehaviour
 
     private bool IsPointerOverThisInUI()
     {
-        PointerEventData eventData = new PointerEventData(EventSystem.current);
-        eventData.position = Input.mousePosition;
+        if (EventSystem.current == null || Pointer.current == null) return false;
 
-        var results = new System.Collections.Generic.List<RaycastResult>();
+        PointerEventData eventData = new PointerEventData(EventSystem.current);
+        eventData.position = Pointer.current.position.ReadValue();
+
+        List<RaycastResult> results = new List<RaycastResult>();
         EventSystem.current.RaycastAll(eventData, results);
 
         if (results.Count > 0)
