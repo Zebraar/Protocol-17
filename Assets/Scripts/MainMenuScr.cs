@@ -11,7 +11,6 @@ public class MainMenuScr : MonoBehaviour
 
     void Start()
     {
-        audioSource.time = PlayerPrefs.GetFloat("Music", 0.0f);
         CloseAllPanels();
     }
     public void CloseAllPanels()
@@ -32,9 +31,15 @@ public class MainMenuScr : MonoBehaviour
     }
     public void NewGame()
     {
+        float masterVolume = PlayerPrefs.GetFloat("MasterVolume", 1.0f);
+        float sfxVolume = PlayerPrefs.GetFloat("SFXVolume", 1.0f);
+        float vhsvolume = PlayerPrefs.GetFloat("VHSVolume", 1.0f);
         PlayerPrefs.DeleteAll();
         PlayerPrefs.SetInt("IsNewGame", 1);
         PlayerPrefs.SetFloat("Music", audioSource.time);
+        PlayerPrefs.SetFloat("MasterVolume", masterVolume);
+        PlayerPrefs.SetFloat("SFXVolume", sfxVolume);
+        PlayerPrefs.SetFloat("VHSVolume", vhsvolume);
         PlayerPrefs.Save();
         SceneManager.LoadScene("GameScene");
     }

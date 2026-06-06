@@ -17,8 +17,6 @@ public class GameManager : MonoBehaviour
     public GameState gameState = new GameState();
     public EnergyHandler energyHandler;
     public SaveManager saveManager;
-    [Header("Audio")]
-    public AudioSource audioSource;
 
     private int autoSaveDelay;
 
@@ -30,7 +28,6 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("IsNewGame", 0);
             PlayerPrefs.Save();
         }
-        audioSource.time = PlayerPrefs.GetFloat("Music", 0.0f);
         EventSO oldEvent = currentEvent;
         saveManager.Load();
         if(currentEvent == null) currentEvent = oldEvent;
