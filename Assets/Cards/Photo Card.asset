@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: Photo Card
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
   cardName: "\u0424\u043E\u0442\u043E"
+  cardLogo: {fileID: 21300000, guid: 54f3de9ab3a773e44a23a0481586933f, type: 3}
   energyCost: 5
+  energyAdd: 0

@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: Scan Card
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
   cardName: "\u0421\u043A\u0430\u043D\u0438\u0440\u043E\u0432\u0430\u0442\u044C"
+  cardLogo: {fileID: 21300000, guid: 921e185ea33d8614d8978b356201c8a9, type: 3}
   energyCost: 5
+  energyAdd: 0

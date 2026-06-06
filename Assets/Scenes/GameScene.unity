@@ -258,6 +258,7 @@ MonoBehaviour:
   cardNameText: {fileID: 259323613}
   button: {fileID: 1138395360}
   cardCostText: {fileID: 621478814}
+  cardLogo: {fileID: 155119492}
 --- !u!1 &86213304
 GameObject:
   m_ObjectHideFlags: 0
@@ -575,6 +576,7 @@ MonoBehaviour:
   cardNameText: {fileID: 972369489}
   button: {fileID: 1091933945}
   cardCostText: {fileID: 611472197}
+  cardLogo: {fileID: 445699304}
 --- !u!1 &259323611
 GameObject:
   m_ObjectHideFlags: 0
@@ -1217,6 +1219,7 @@ MonoBehaviour:
   cardNameText: {fileID: 747457499}
   button: {fileID: 86213306}
   cardCostText: {fileID: 1394431673}
+  cardLogo: {fileID: 1496288642}
 --- !u!1 &411307461
 GameObject:
   m_ObjectHideFlags: 0
@@ -4211,6 +4214,7 @@ MonoBehaviour:
   cardNameText: {fileID: 287493423}
   button: {fileID: 1536013106}
   cardCostText: {fileID: 1320550107}
+  cardLogo: {fileID: 1107947353}
 --- !u!1 &1909365062
 GameObject:
   m_ObjectHideFlags: 0
