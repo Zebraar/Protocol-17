@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using System.Linq;
 
 public class GameManager : MonoBehaviour
@@ -17,8 +19,14 @@ public class GameManager : MonoBehaviour
     public GameState gameState = new GameState();
     public EnergyHandler energyHandler;
     public SaveManager saveManager;
+    [Header("Other")]
+    public GameObject vhsEffect;
 
     private int autoSaveDelay;
+    private const float defFilmGrain = 1.0f;
+    private const float defLensDestortion = 0.215f;
+    private const float defChromaticAberration = 0.3f;
+    private const float defBloom = 2.0f;
 
     private void Start()
     {
@@ -33,6 +41,7 @@ public class GameManager : MonoBehaviour
         if(currentEvent == null) currentEvent = oldEvent;
         ShowEvent(currentEvent);
         UpdateEnergyUI();
+        SetVHSEffect();
     }
 
     public void ShowEvent(EventSO eventData)
@@ -91,5 +100,38 @@ public class GameManager : MonoBehaviour
     private void UpdateEnergyUI()
     {
         energyText.text = "Ваша энергия: " + energyHandler.GetEnergy().ToString();
+    }
+    private void SetVHSEffect()
+    {
+        var effect = vhsEffect.GetComponent<Volume>();
+        float effectValue = PlayerPrefs.GetFloat("FilmGrain", defFilmGrain);
+        FilmGrain filmGrain;
+        if(effect.profile.TryGet(out filmGrain))
+        {
+            filmGrain.intensity.value = effectValue;
+        }
+
+        LensDistortion lensDistortion;
+        effectValue = PlayerPrefs.GetFloat("LensDistortion", defLensDestortion);
+        if(effect.profile.TryGet(out lensDistortion))
+        {
+            lensDistortion.intensity.value = effectValue;
+        }
+
+        ChromaticAberration chromaticAberration;
+        effectValue = PlayerPrefs.GetFloat("ChromaticAberration", defChromaticAberration);
+        if(effect.profile.TryGet(out chromaticAberration))
+        {
+            chromaticAberration.intensity.value = effectValue;
+        }
+
+        Bloom bloom;
+        effectValue = PlayerPrefs.GetFloat("Bloom", defBloom);
+        if(effect.profile.TryGet(out bloom))
+        {
+            bloom.intensity.value = effectValue;
+        }
+        if(PlayerPrefs.GetInt("IsVHS", 1) == 1) vhsEffect.SetActive(true);
+        else vhsEffect.SetActive(false);
     }
 }

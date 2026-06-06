@@ -34,12 +34,22 @@ public class MainMenuScr : MonoBehaviour
         float masterVolume = PlayerPrefs.GetFloat("MasterVolume", 1.0f);
         float sfxVolume = PlayerPrefs.GetFloat("SFXVolume", 1.0f);
         float vhsvolume = PlayerPrefs.GetFloat("VHSVolume", 1.0f);
+        float filmGrain = PlayerPrefs.GetFloat("FilmGrain", 1.0f);
+        float lensDestortion = PlayerPrefs.GetFloat("LensDistortion", 0.215f);
+        float chromaticAberration = PlayerPrefs.GetFloat("ChromaticAberration", 0.3f);
+        float bloom = PlayerPrefs.GetFloat("Bloom", 2.0f);
+        int vhsOn = PlayerPrefs.GetInt("IsVHS", 1);
         PlayerPrefs.DeleteAll();
         PlayerPrefs.SetInt("IsNewGame", 1);
         PlayerPrefs.SetFloat("Music", audioSource.time);
         PlayerPrefs.SetFloat("MasterVolume", masterVolume);
         PlayerPrefs.SetFloat("SFXVolume", sfxVolume);
         PlayerPrefs.SetFloat("VHSVolume", vhsvolume);
+        PlayerPrefs.SetFloat("FilmGrain", filmGrain);
+        PlayerPrefs.SetFloat("LensDistortion", lensDestortion);
+        PlayerPrefs.SetFloat("ChromaticAberration", chromaticAberration);
+        PlayerPrefs.SetFloat("Bloom", bloom);
+        PlayerPrefs.SetInt("IsVHS", vhsOn);
         PlayerPrefs.Save();
         SceneManager.LoadScene("GameScene");
     }
