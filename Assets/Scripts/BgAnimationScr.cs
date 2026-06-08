@@ -12,8 +12,7 @@ public class BgAnimationScr : MonoBehaviour
 
     void Update()
     {
-        // Смещаем текстуру по оси X со временем
-        Vector2 offset = new Vector2(Time.time * speed, 0);
+        Vector2 offset = new Vector2(Time.time * speed, Time.time * speed);
         meshRenderer.material.mainTextureOffset = offset;
     }
 }
