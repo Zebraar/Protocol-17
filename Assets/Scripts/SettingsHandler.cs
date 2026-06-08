@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.Rendering;
@@ -15,6 +16,7 @@ public class SettingsHandler : MonoBehaviour
     [SerializeField] private Slider chromaticAberrationSlider;
     [SerializeField] private Slider bloomSlider;
     [SerializeField] private Toggle vhsToggle;
+    [SerializeField] private Slider fpsSlider;
 
     [Header("Texts")]
     [SerializeField] private Text masterVolumeText;
@@ -24,6 +26,7 @@ public class SettingsHandler : MonoBehaviour
     [SerializeField] private Text lensDestortionText;
     [SerializeField] private Text chromaticAberrationText;
     [SerializeField] private Text bloomText;
+    [SerializeField] private Text fpsText;
 
     [Header("Audio")]
     [SerializeField] private AudioMixer audioMixer;
@@ -45,6 +48,9 @@ public class SettingsHandler : MonoBehaviour
 
     void Start()
     {
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = PlayerPrefs.GetInt("FPSLock", 60);
+        fpsSlider.value = PlayerPrefs.GetInt("FPSLock", 60);
         masterVolumeSlider.value = PlayerPrefs.GetFloat("MasterVolume", 1.0f);
         sfxVolumeSlider.value = PlayerPrefs.GetFloat("SFXVolume", 1.0f);
         vhsVolumeSlider.value = PlayerPrefs.GetFloat("VHSVolume", 1.0f);
@@ -143,6 +149,13 @@ public class SettingsHandler : MonoBehaviour
         vhsEffect.SetActive(vhsToggle.isOn);
         if(vhsToggle.isOn == false) PlayerPrefs.SetInt("IsVHS", 0);
         else PlayerPrefs.SetInt("IsVHS", 1);
+        PlayerPrefs.Save();
+    }
+    public void OnFPSChanged()
+    {
+        Application.targetFrameRate = Convert.ToInt32(fpsSlider.value);
+        fpsText.text = Convert.ToInt32(fpsSlider.value).ToString();
+        PlayerPrefs.SetInt("FPSLock", Convert.ToInt32(fpsSlider.value));
         PlayerPrefs.Save();
     }
     public void BackToStandard()
