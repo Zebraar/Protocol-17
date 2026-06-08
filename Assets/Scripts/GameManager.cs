@@ -99,7 +99,7 @@ public class GameManager : MonoBehaviour
     }
     private void UpdateEnergyUI()
     {
-        energyText.text = "Ваша энергия: " + energyHandler.GetEnergy().ToString();
+        energyText.text = energyHandler.GetEnergy().ToString();
     }
     private void SetVHSEffect()
     {
