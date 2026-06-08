@@ -8,6 +8,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioSource audioSourceVHS;
     [SerializeField] private AudioMixer audioMixer;
     [SerializeField] private AudioClip clicksSound;
+    [SerializeField] private AudioClip errorSound;
 
     private const string mixerParameterNameMaster = "Master"; 
     private const string mixerParameterNameSFX = "SFX"; 
@@ -22,6 +23,11 @@ public class SoundManager : MonoBehaviour
     public void PlayClickSound()
     {
         audioSource.PlayOneShot(clicksSound);
+    }
+
+    public void PlayErrorSound()
+    {
+        audioSource.PlayOneShot(errorSound);
     }
 
     private void SetMusicVolume()

@@ -7,6 +7,7 @@ public class PauseHandler : MonoBehaviour
 {
     [Header("UI")]
     [SerializeField] private GameObject pausePanel;
+    [SerializeField] private GameObject warningPanel;
     [Header("Audio")]
     public AudioSource audioSource;
     [Header("Scripts")]
@@ -16,6 +17,7 @@ public class PauseHandler : MonoBehaviour
     void Start()
     {
         pausePanel.SetActive(false);
+        warningPanel.SetActive(false);
     }
     private IEnumerator TogglePause()
     {
@@ -45,10 +47,22 @@ public class PauseHandler : MonoBehaviour
     public void BackToMainMenu()
     {
         Pause();
-        saveManager.Save();
         PlayerPrefs.SetFloat("Music", audioSource.time);
         PlayerPrefs.Save();
         SceneManager.LoadScene("MainMenu");
+    }
+    public IEnumerator ShowWarningPanelAnim()
+    {
+        warningPanel.GetComponent<RectTransform>().localScale = Vector3.zero;
+        warningPanel.SetActive(true);
+        Time.timeScale = 1.0f;
+        warningPanel.GetComponent<RectTransform>().DOScale(new Vector3(1.0f, 1.0f, 1.0f), 0.2f).SetEase(Ease.OutBack);
+        yield return new WaitForSeconds(0.4f);
+        Time.timeScale = 0.0f;
+    }
+    public void ShowWarningPanel()
+    {
+        StartCoroutine(ShowWarningPanelAnim());
     }
     public void SaveGame()
     {
