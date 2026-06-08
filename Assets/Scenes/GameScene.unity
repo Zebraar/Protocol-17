@@ -1191,6 +1191,7 @@ MonoBehaviour:
   energyHandler: {fileID: 7092585}
   saveManager: {fileID: 674061223}
   vhsEffect: {fileID: 348094964}
+  audioSource: {fileID: 350836390}
 --- !u!4 &359388522
 Transform:
   m_ObjectHideFlags: 0

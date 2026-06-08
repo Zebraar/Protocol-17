@@ -8,5 +8,6 @@ public class EventSO : ScriptableObject
     [TextArea]
     public string description;
     public Sprite image;
+    public AudioClip sound;
     public List<EventChoice> choices;
 }

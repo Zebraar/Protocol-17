@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public SaveManager saveManager;
     [Header("Other")]
     public GameObject vhsEffect;
+    public AudioSource audioSource;
 
     private int autoSaveDelay;
     private const float defFilmGrain = 1.0f;
@@ -57,6 +58,7 @@ public class GameManager : MonoBehaviour
         titleText.text = eventData.eventName;
         descriptionText.text = eventData.description;
         eventImage.sprite = eventData.image;
+        if(eventData.sound != null) audioSource.PlayOneShot(eventData.sound);
 
         SpawnCards();
     }
